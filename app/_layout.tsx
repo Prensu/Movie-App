@@ -1,22 +1,11 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { Stack } from 'expo-router';
 
-import React from 'react';
-import { Tabs } from 'expo-router'; // Make sure you have this installed
-
-const _Layout = () => {
-  return (
-      <Tabs>
-        <Tabs.Screen
-            name="index"
-            options={{
-              title: 'Home',
-              headerShown: false,
+export default function RootLayout() {
+    return (
+        <Stack
+            screenOptions={{
+                headerShown: false, // 👈 hide stack header globally
             }}
         />
-      </Tabs>
-  );
-};
-
-export default _Layout;
-
-const styles = StyleSheet.create({});
+    );
+}

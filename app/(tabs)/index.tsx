@@ -1,14 +1,26 @@
-import { Text, View } from 'react-native';
-import { Link } from 'expo-router';
+import { View, Text, StyleSheet } from 'react-native';
+import React from 'react';
 
-
-export default function Index() {
+const HomeScreen = () => {
     return (
-        <View className="flex-1 justify-center items-center bg-white">
-            <Text className="text-4xl font-bold text-black">Welcome!</Text>
-
-            <Link href="/onboarding">onBoarding</Link>
-            <Link href="/movie/avangers">Avengers</Link>
+        <View style={styles.container}>
+            <Text style={styles.text}>Welcome!</Text>
         </View>
     );
-}
+};
+
+export default HomeScreen;
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1, // Take full screen height
+        justifyContent: 'center', // Center vertically
+        alignItems: 'center',     // Center horizontally
+        backgroundColor: '#fff',  // Background color (optional)
+    },
+    text: {
+        fontSize: 24,
+        fontWeight: 'bold',
+        color: '#333',
+    },
+});
