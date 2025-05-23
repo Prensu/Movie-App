@@ -1,26 +1,22 @@
-import { View, Text, StyleSheet } from 'react-native';
-import React from 'react';
+import { images } from "@/constants/images";
+import { icons } from "@/constants/icons";
+import { View, Image, ScrollView } from "react-native";
 
-const HomeScreen = () => {
+export default function Index() {
     return (
-        <View style={styles.container}>
-            <Text style={styles.text}>Welcome!</Text>
+        <View className="flex-1 bg-primary">
+            <Image
+                source={images.bg}
+                className="absolute w-full z-0"
+                resizeMode="cover"
+            />
+            <ScrollView className="flex-1 px-5" showsVerticalScrollIndicator={false}>
+                <Image
+                    source={icons.logo}
+                    className="w-12 h-10 mt-20 mb-5 mx-auto"
+                    resizeMode="contain"
+                />
+            </ScrollView>
         </View>
     );
-};
-
-export default HomeScreen;
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1, // Take full screen height
-        justifyContent: 'center', // Center vertically
-        alignItems: 'center',     // Center horizontally
-        backgroundColor: '#fff',  // Background color (optional)
-    },
-    text: {
-        fontSize: 24,
-        fontWeight: 'bold',
-        color: '#333',
-    },
-});
+}
